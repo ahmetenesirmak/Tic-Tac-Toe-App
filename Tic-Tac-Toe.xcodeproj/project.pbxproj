@@ -41,6 +41,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CDC6D38A28B4AD4B006DC6AD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF9B0728B0A56100D5B0E8 /* AppDelegate.swift */,
+				CDCF9B0928B0A56100D5B0E8 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CDC6D38B28B4AD55006DC6AD /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF9B1028B0A56100D5B0E8 /* Assets.xcassets */,
+				CDCF9B1B28B0A64B00D5B0E8 /* Colors.xcassets */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		CDC6D38C28B4AD6A006DC6AD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF9B0B28B0A56100D5B0E8 /* ViewController.swift */,
+				CDCF9B1D28B0B27800D5B0E8 /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CDC6D38D28B4AD77006DC6AD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF9B0D28B0A56100D5B0E8 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		CDCF9AFB28B0A56100D5B0E8 = {
 			isa = PBXGroup;
 			children = (
@@ -60,13 +95,10 @@
 		CDCF9B0628B0A56100D5B0E8 /* Tic-Tac-Toe */ = {
 			isa = PBXGroup;
 			children = (
-				CDCF9B0728B0A56100D5B0E8 /* AppDelegate.swift */,
-				CDCF9B0928B0A56100D5B0E8 /* SceneDelegate.swift */,
-				CDCF9B0B28B0A56100D5B0E8 /* ViewController.swift */,
-				CDCF9B1D28B0B27800D5B0E8 /* GameViewController.swift */,
-				CDCF9B0D28B0A56100D5B0E8 /* Main.storyboard */,
-				CDCF9B1028B0A56100D5B0E8 /* Assets.xcassets */,
-				CDCF9B1B28B0A64B00D5B0E8 /* Colors.xcassets */,
+				CDC6D38C28B4AD6A006DC6AD /* Controllers */,
+				CDC6D38D28B4AD77006DC6AD /* Storyboard */,
+				CDC6D38B28B4AD55006DC6AD /* Util */,
+				CDC6D38A28B4AD4B006DC6AD /* App */,
 				CDCF9B1228B0A56100D5B0E8 /* LaunchScreen.storyboard */,
 				CDCF9B1528B0A56100D5B0E8 /* Info.plist */,
 			);

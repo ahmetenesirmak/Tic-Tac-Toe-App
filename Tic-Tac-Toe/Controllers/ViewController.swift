@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: IBOutlets
-
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var cardView: UIView!
@@ -22,7 +21,7 @@ class ViewController: UIViewController {
         setupUI()
     }
     
-    //MARK: Functions
+    //MARK: - Functions
     
     @IBAction func startButtonClicked(_ sender: UIButton) {
         guard !nameField.text!.trimmingCharacters(in: .whitespaces).isEmpty else { return }

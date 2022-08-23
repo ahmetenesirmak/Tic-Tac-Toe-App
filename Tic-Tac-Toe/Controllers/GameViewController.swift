@@ -11,10 +11,10 @@ class GameViewController: UIViewController {
     
     //MARK: Variables
     var playerName: String!
-    var lastValue = "o"
-    
-    var playerChoices: [Box] = []
-    var computerChoices: [Box] = []
+    private var lastValue = "o"
+    private var selectedBoxes: [UIImageView] = []
+    private var playerChoices: [Box] = []
+    private var computerChoices: [Box] = []
 
     //MARK: IBOutlets
     @IBOutlet weak var playerNameLabel: UILabel!
@@ -33,9 +33,13 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        playerNameLabel.text = playerName + ":"
         
+        playerNameLabel.text = playerName + ":"
+    }
+    
+    //MARK: - Functions
+    
+    func createTapBox() {
         createTap(on: box1, type: .one)
         createTap(on: box2, type: .two)
         createTap(on: box3, type: .three)
@@ -55,9 +59,14 @@ class GameViewController: UIViewController {
     }
     
     @objc func boxClicked(_ sender: UITapGestureRecognizer) {
-        print("Box: \(sender.name) was clicked.")
+        print("Box: \(sender.name ?? "Box") was clicked.")
         let selectedBox = getBox(from: sender.name ?? "")
         makeChoice(selectedBox)
+        
+        //disable user interaction for player selected box
+        selectedBox.isUserInteractionEnabled = false
+        selectedBoxes.append(selectedBox)
+        
         playerChoices.append(Box(rawValue: sender.name!)!)
         checkIfWon()
         
@@ -72,6 +81,7 @@ class GameViewController: UIViewController {
         
         for name in Box.allCases {
             let box = getBox(from: name.rawValue)
+            
             if box.image == nil {
                 avaliableSpaces.append(box)
                 avaliableBoxes.append(name)
@@ -82,6 +92,11 @@ class GameViewController: UIViewController {
         
         let randIndex = Int.random(in: 0 ..< avaliableSpaces.count)
         makeChoice(avaliableSpaces[randIndex])
+        
+        //disable user interaction for computer selected box
+        avaliableSpaces[randIndex].isUserInteractionEnabled = false
+        selectedBoxes.append(avaliableSpaces[randIndex])
+        
         computerChoices.append(avaliableBoxes[randIndex])
         checkIfWon()
     }
@@ -152,6 +167,15 @@ class GameViewController: UIViewController {
         lastValue = "o"
         playerChoices = []
         computerChoices = []
+        resetSelectedBoxes()
+        
+    }
+    
+    func resetSelectedBoxes() {
+        for box in selectedBoxes {
+            box.isUserInteractionEnabled = true
+        }
+        self.selectedBoxes.removeAll()
         
     }
     
