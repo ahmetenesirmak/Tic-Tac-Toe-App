@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Tic-Tac-Toe-Game-logo.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

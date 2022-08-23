@@ -13,6 +13,8 @@
 		CDCF9B0F28B0A56100D5B0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCF9B0D28B0A56100D5B0E8 /* Main.storyboard */; };
 		CDCF9B1128B0A56100D5B0E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCF9B1028B0A56100D5B0E8 /* Assets.xcassets */; };
 		CDCF9B1428B0A56100D5B0E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCF9B1228B0A56100D5B0E8 /* LaunchScreen.storyboard */; };
+		CDCF9B1C28B0A64B00D5B0E8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDCF9B1B28B0A64B00D5B0E8 /* Colors.xcassets */; };
+		CDCF9B1E28B0B27800D5B0E8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCF9B1D28B0B27800D5B0E8 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CDCF9B1028B0A56100D5B0E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDCF9B1328B0A56100D5B0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDCF9B1528B0A56100D5B0E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCF9B1B28B0A64B00D5B0E8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		CDCF9B1D28B0B27800D5B0E8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,10 @@
 				CDCF9B0728B0A56100D5B0E8 /* AppDelegate.swift */,
 				CDCF9B0928B0A56100D5B0E8 /* SceneDelegate.swift */,
 				CDCF9B0B28B0A56100D5B0E8 /* ViewController.swift */,
+				CDCF9B1D28B0B27800D5B0E8 /* GameViewController.swift */,
 				CDCF9B0D28B0A56100D5B0E8 /* Main.storyboard */,
 				CDCF9B1028B0A56100D5B0E8 /* Assets.xcassets */,
+				CDCF9B1B28B0A64B00D5B0E8 /* Colors.xcassets */,
 				CDCF9B1228B0A56100D5B0E8 /* LaunchScreen.storyboard */,
 				CDCF9B1528B0A56100D5B0E8 /* Info.plist */,
 			);
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCF9B1428B0A56100D5B0E8 /* LaunchScreen.storyboard in Resources */,
+				CDCF9B1C28B0A64B00D5B0E8 /* Colors.xcassets in Resources */,
 				CDCF9B1128B0A56100D5B0E8 /* Assets.xcassets in Resources */,
 				CDCF9B0F28B0A56100D5B0E8 /* Main.storyboard in Resources */,
 			);
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCF9B1E28B0B27800D5B0E8 /* GameViewController.swift in Sources */,
 				CDCF9B0C28B0A56100D5B0E8 /* ViewController.swift in Sources */,
 				CDCF9B0828B0A56100D5B0E8 /* AppDelegate.swift in Sources */,
 				CDCF9B0A28B0A56100D5B0E8 /* SceneDelegate.swift in Sources */,
