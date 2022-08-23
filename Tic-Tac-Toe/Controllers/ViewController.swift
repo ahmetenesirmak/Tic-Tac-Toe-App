@@ -14,12 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var cardView: UIView!
     
-    //MARK: Life Cycle
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
+    
     
     //MARK: - Functions
     
@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
     }
+    
+    
     func setupUI() {
         startButton.layer.cornerRadius = 10
         cardView.layer.cornerRadius = 10
@@ -40,11 +42,11 @@ class ViewController: UIViewController {
         cardView.layer.shadowRadius = 10
         cardView.layer.shadowOffset = .zero
     }
+    
+    
   //If I tap on the screen, the keyboard will close
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nameField.resignFirstResponder()
     }
-
-
 }
 

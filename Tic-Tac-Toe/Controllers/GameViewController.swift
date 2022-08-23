@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     private var playerChoices: [Box] = []
     private var computerChoices: [Box] = []
 
+    
     //MARK: IBOutlets
     @IBOutlet weak var playerNameLabel: UILabel!
     @IBOutlet weak var playerScoreLabel: UILabel!
@@ -31,11 +32,15 @@ class GameViewController: UIViewController {
     @IBOutlet weak var box8: UIImageView!
     @IBOutlet weak var box9: UIImageView!
     
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         playerNameLabel.text = playerName + ":"
+        createTapBox()
     }
+    
     
     //MARK: - Functions
     
@@ -51,6 +56,7 @@ class GameViewController: UIViewController {
         createTap(on: box9, type: .nine)
     }
     
+    
     func createTap(on imageView: UIImageView, type box: Box) {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.boxClicked(_:)))
         tap.name = box.rawValue
@@ -58,8 +64,9 @@ class GameViewController: UIViewController {
         imageView.addGestureRecognizer(tap)
     }
     
+    
     @objc func boxClicked(_ sender: UITapGestureRecognizer) {
-        print("Box: \(sender.name ?? "Box") was clicked.")
+        
         let selectedBox = getBox(from: sender.name ?? "")
         makeChoice(selectedBox)
         
@@ -68,12 +75,26 @@ class GameViewController: UIViewController {
         selectedBoxes.append(selectedBox)
         
         playerChoices.append(Box(rawValue: sender.name!)!)
-        checkIfWon()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.checkIfWon()
             self.computerPlay()
         }
     }
+    
+    
+    func makeChoice(_ selectedBox: UIImageView) {
+        guard selectedBox.image == nil else { return }
+        
+        if lastValue == "x" {
+            selectedBox.image = #imageLiteral(resourceName: "oh")
+            lastValue = "o"
+        } else {
+            selectedBox.image = #imageLiteral(resourceName: "ex")
+            lastValue = "x"
+        }
+    }
+    
     
     func computerPlay() {
         var avaliableSpaces = [UIImageView]()
@@ -98,21 +119,12 @@ class GameViewController: UIViewController {
         selectedBoxes.append(avaliableSpaces[randIndex])
         
         computerChoices.append(avaliableBoxes[randIndex])
-        checkIfWon()
-    }
-    
-    func makeChoice(_ selectedBox: UIImageView) {
-        guard selectedBox.image == nil else { return }
         
-        if lastValue == "x" {
-            selectedBox.image = #imageLiteral(resourceName: "oh")
-            lastValue = "o"
-        } else {
-            selectedBox.image = #imageLiteral(resourceName: "ex")
-            lastValue = "x"
-
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.checkIfWon()
         }
     }
+    
     
     func checkIfWon() {
         var correct = [[Box]]()
@@ -159,6 +171,7 @@ class GameViewController: UIViewController {
         }
     }
     
+    
     func resetGame() {
         for name in Box.allCases {
             let box = getBox(from: name.rawValue)
@@ -168,15 +181,14 @@ class GameViewController: UIViewController {
         playerChoices = []
         computerChoices = []
         resetSelectedBoxes()
-        
     }
+    
     
     func resetSelectedBoxes() {
         for box in selectedBoxes {
             box.isUserInteractionEnabled = true
         }
         self.selectedBoxes.removeAll()
-        
     }
     
     
@@ -205,11 +217,12 @@ class GameViewController: UIViewController {
         }
     }
     
+    
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-
 }
+
 
 enum Box: String, CaseIterable {
     case one, two, three, four, five, six, seven, eight, nine
