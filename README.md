@@ -3,4 +3,4 @@ Tic Tac Toe is a classic two-player board game played on a 3x3 grid. The objecti
 
  You can see the images of the application below.
  
- <img src="app-images/screen-1.png" width="320"> <img src="app-images/sceen-2.png" width="320"> <img src="app-images/screen-3.png" width="320">
+ <img src="app-images/screen-1.png" width="320"> <img src="app-images/screen-2.png" width="320"> <img src="app-images/screen-3.png" width="320">
